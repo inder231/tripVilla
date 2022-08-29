@@ -7,12 +7,31 @@ import Navbar from "../../Components/Navbar";
 
 const PropertyPageThree = () => {
   const location = useLocation();
-  const dispatch = useDispatch();
+  // console.log(location);
   const navigate = useNavigate();
   const [brandName, setBrandName] = useState("");
+  const handleForm = () => {
+    if (brandName) {
+      axios
+        .patch(`https://api-0231.herokuapp.com/form/${location.state.id}`, {
+          brandname: brandName,
+        })
+        .then((res) => {
+          console.log(res);
+          if (res.status === 200) {
+            navigate("/addproperty-form-4", {
+              state: location.state,
+            });
+          }
+        })
+        .catch((err) => console.log(err));
+    } else {
+      navigate("/addproperty-form-4", { state: location.state });
+    }
+  };
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Box position="relative" height="85vh" weight="100vh">
         <Box
           position="absolute"
@@ -57,23 +76,7 @@ const PropertyPageThree = () => {
               PREVIOUS
             </Button>
             <Button
-              onClick={() => {
-                if (brandName) {
-                  axios
-                    .patch(`https://api-0231.herokuapp.com/form/${location.state}`, {
-                      brandname: brandName,
-                    })
-                    .then((res) => {
-                      if (res.status === 200) {
-                        navigate("/addproperty-form-4", {
-                          state: location.state,
-                        });
-                      }
-                    });
-                } else {
-                  navigate("/addproperty-form-4", { state: location.state });
-                }
-              }}
+              onClick={handleForm}
               borderRadius="none"
               variant="solid"
               colorScheme="blue"
