@@ -8,7 +8,7 @@ import { deleteForm } from "../../Redux/AppReducer/action";
 
 const PropertyPageFive = () => {
   const location = useLocation();
-  // console.log(location);
+  console.log(location);
   const navigate = useNavigate();
   const dispatch =useDispatch();
   const [outerImages, setOuterImages] = useState([]);
@@ -49,7 +49,7 @@ const PropertyPageFive = () => {
     } else {
       console.log(innerImages.length, outerImages.length);
       axios
-        .patch(`https://api-0231.herokuapp.com/form/${location.state}`, {
+        .patch(`https://api-0231.herokuapp.com/form/${location.state.id}`, {
           images: payload,
         })
         .then((res) => {
@@ -62,7 +62,7 @@ const PropertyPageFive = () => {
               isClosable: true,
             });
           }
-        });
+        })
     }
   };
   const deleteProduct = ()=>{

@@ -22,7 +22,7 @@ import { deleteForm } from "../../Redux/AppReducer/action";
 const PropertyPageFour = () => {
   const location = useLocation();
   const dispatch = useDispatch();
-  console.log(location.state);
+  // console.log(location.state);
   const navigate = useNavigate();
   const toast = useToast();
   const [cabinCount, setCabinCount] = useState(1);
