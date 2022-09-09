@@ -28,7 +28,7 @@ This a collaborative project done within a 4 members team
 
 ## Tech Stack
 
-**Client:** React, Redux, ChakraUI, React-Slick
+**Client:** React, Redux, ChakraUI, React-Slick ,Bootsrap,HTML,Css,Js
 
 
 
