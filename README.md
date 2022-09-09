@@ -36,6 +36,8 @@ This a collaborative project done within a 4 members team
 
 - Responsiveness using Chakra UI
 - list property
+- Sign up Singn in
+- Able to Book House/hotels
 - Carousal Effect
 - Tabs using Chakra UI
 - Drawer using Chakra UI
@@ -53,4 +55,4 @@ This a collaborative project done within a 4 members team
 - gitHub:- https://github.com/AshishChaudhary3639
 
 - Mohd Javed
-- gitHub:-
+- gitHub:-https://github.com/MJaved9
